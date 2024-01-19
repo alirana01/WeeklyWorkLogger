@@ -1,4 +1,4 @@
-const issueData = {
+const prData = {
     url: window.location.href,
     id: document.querySelector('#key-val')?.textContent,
     reporter: document.querySelector('#reporter-val .user-hover')?.textContent,
@@ -8,4 +8,4 @@ const issueData = {
     summary : document.querySelector('#summary-val')?.innerText,
     issueStatus: document.querySelector('#status-val')?.innerText
 };
-chrome.runtime.sendMessage({ type: "logIssue", data: issueData });
+chrome.runtime.sendMessage({ type: "logJiraIssue", data: prData });

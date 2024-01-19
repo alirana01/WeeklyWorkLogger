@@ -6,7 +6,9 @@ function saveSettings() {
     const settings = {
         jiraUrl: document.getElementById('jira-url').value,
         jiraProjects: document.getElementById('jira-projects').value,
-        gitUrl: document.getElementById('git-url').value
+        gitRepo: document.getElementById('git-repo').value,
+        gitToken : document.getElementById('git-token').value,
+        gitOwner: document.getElementById('git-owner').value
     };
     chrome.storage.local.set({ 'settings': settings }, function() {
         alert('Settings saved!');
@@ -19,7 +21,9 @@ function loadSettings() {
         if (data.settings) {
             document.getElementById('jira-url').value = data.settings.jiraUrl;
             document.getElementById('jira-projects').value = data.settings.jiraProjects;
-            document.getElementById('git-url').value = data.settings.gitUrl;
+            document.getElementById('git-repo').value = data.settings.gitRepo;
+            document.getElementById('git-owner').value = data.settings.gitOwner;
+            document.getElementById('git-token').value = data.settings.gitToken;
         }
     });
 }

@@ -65,8 +65,16 @@
             <input type="text" id="jira-projects" name="jira-projects" placeholder="PROJECT1, PROJECT2">
         </div>
         <div class="form-group">
-            <label for="git-url">GIT URL</label>
-            <input type="url" id="git-url" name="git-url" placeholder="https://your-git-url.com">
+            <label for="git-owner">GIT REPO OWNER</label>
+            <input type="text" id="git-owner" name="git-owner" placeholder="OWNER">
+        </div>
+        <div class="form-group">
+            <label for="git-repo">GIT REPO NAME</label>
+            <input type="text" id="git-repo" name="git-repo" placeholder="Repository">
+        </div>
+        <div class="form-group">
+            <label for="git-token">GIT AUTH TOKEN</label>
+            <input type="password" id="git-token" name="git-token" placeholder="GITHUB AUTHORIZATION TOKEn FOR REPO">
         </div>
         <button id="save-settings">Save Settings</button>
     </div>
