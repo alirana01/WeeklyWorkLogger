@@ -21,11 +21,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 });
             }
 
-            // Similarly, you can add conditions for GitHub or other URLs
             if (tab.url && tab.url.startsWith(gitUrl)) {
                 chrome.scripting.executeScript({
                     target: { tabId: tabId },
-                    files: ['gitContent.js'] // Assuming you have a separate script for GitHub
+                    files: ['gitContent.js']
                 });
             }
         });
@@ -37,10 +36,7 @@ function appendToCSV(data) {
     const csvRow = `${data.id},${data.summary},${data.issueStatus},${data.assignee},${data.reporter},${data.description}\n`;
 
     // Append this data to a file
-    // For simplicity, we'll just log it. In practice, you'd write this to a file.
+    // For simplicity, we'll just log it. write this to a file later.
     console.log(csvRow);
 
-    // You can use file handling APIs or external libraries to actually write to a file.
-    // Due to browser security restrictions, writing directly to the user's file system is limited.
-    // Consider options like saving to localStorage and then exporting manually, or using an external server.
 }

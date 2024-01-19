@@ -1,4 +1,3 @@
-// You can use DOM manipulation to extract issue details
 const issueData = {
     url: window.location.href,
     id: document.querySelector('#key-val')?.textContent,
